@@ -1,11 +1,24 @@
-# Introduction
- 
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+import "tailwindcss/tailwind.css";
+import Link from "next/link";
 
-## What is Nextra?
+<h1 className="mt-10 mb-10 text-sm px-3 bg-zinc-100 w-fit rounded-full dark:bg-zinc-800">
+  Introducing our football API
+</h1>
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+# Welcome to our football API
 
-## Documentation
+<h1 className="lg:w-2/3 mt-5 text-sm">
+  We provide +400 leagues all over the world. Including livescore which have
+  realtime update every 20 seconds, events, line-ups, players, leagues, teams,
+  standing, statistics, transfers etc.
+</h1>
 
-The documentation is available at [https://nextra.site](https://nextra.site).
+<h1 className="lg:w-2/3 mt-5 text-sm">
+  Checkout the Documentations how to use this API.
+</h1>
+
+<div className="w-fit px-3 py-1 rounded-md mt-10 bg-black dark:bg-zinc-700 text-white hover:bg-zinc-50 dark:hover:bg-white hover:text-black transition">
+  <Link href="/docs/introduction" className="w-full">
+    Documentation
+  </Link>
+</div>
