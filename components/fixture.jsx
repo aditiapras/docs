@@ -5,8 +5,10 @@ import moment from "moment-timezone";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Fixture() {
-  const { data, error, isLoading } = useSWR("/api/upcoming", fetcher);
-
+  const { data, error, isLoading } = useSWR("/api/upcoming", fetcher, {
+    refreshInterval: 60000,
+    revalidateOnFocus: false,
+  });
   if (isLoading)
     return (
       <div className="mt-5 bg-zinc-200 dark:bg-zinc-800 rounded-md animate-pulse p-3"></div>
@@ -16,12 +18,33 @@ export default function Fixture() {
   const rawDate = data.getData.allFixtures.nextMatch.status.utcTime;
   const getDate = new Date(rawDate);
   const date = moment(getDate).format("LLLL").toLocaleString();
-  const wait = moment(getDate).endOf("hour").fromNow().toLocaleString();
+  const finished = data.getData.allFixtures.nextMatch.status.finished;
+  const started = data.getData.allFixtures.nextMatch.status.started;
+  const cancelled = data.getData.allFixtures.nextMatch.status.cancelled;
+
+  const live =
+    finished == false && started == true && cancelled == false ? true : false;
 
   return (
     <>
       <div className="w-full border mt-5 rounded-lg dark:border-zinc-800 flex flex-col gap-5 p-5 items-center justify-center">
         <p className="font-semibold text-2xl">Upcoming Matches</p>
+        <div
+          className={`${
+            live == true
+              ? "bg-emerald-200 px-2 rounded-full text-sm text-emerald-600"
+              : ""
+          }`}
+        >
+          {live == true ? (
+            <p>
+              {" "}
+              <span className="animate-pulse">•</span> Live
+            </p>
+          ) : (
+            ""
+          )}
+        </div>
 
         <div className="flex gap-2 items-center">
           <img
