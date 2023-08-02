@@ -1,0 +1,59 @@
+# All Leagues
+
+## Base URL
+
+This is the base URL for this endpoint `https://football-api67.p.rapidapi.com/allLeagues` you can use this endpoint to get the league information such as league names, id, and seasons.
+
+### Request Headers
+
+Dont forget to set the request headers according to the listed headers, unless you will get an error response from the API.
+
+`'X-RapidAPI-Key': YOUR_API_KEY` and `'X-RapidAPI-Host': 'football-api67.p.rapidapi.com'`
+
+### Query Parameters
+
+This endpoint is **not require** any parameter, just go with this endpoint `https://football-api67.p.rapidapi.com/allLeagues` and you will get response from the API.
+
+### Example Request
+
+This is the example request using [`Node.js`](https://nodejs.org/) fetch.
+
+```js filename="example.js" copy
+const fetch = require("node-fetch");
+
+const url = "https://football-api67.p.rapidapi.com/allLeagues";
+const options = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": YOUR_API_KEY,
+    "X-RapidAPI-Host": "football-api67.p.rapidapi.com",
+  },
+};
+
+try {
+  const response = await fetch(url, options);
+  const result = await response.text();
+  console.log(result);
+} catch (error) {
+  console.error(error);
+}
+```
+
+### Example Response
+
+Once you fetch the data from the API, you will get response from the API as shown in the example below.
+
+```json
+{
+    "popular": [
+        {
+            id:47
+            name:"Premier League"
+            localizedName:"Premier League"
+            logo:
+            light:"..."
+            dark:"..."
+        }
+    ]
+}
+```

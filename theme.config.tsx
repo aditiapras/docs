@@ -7,11 +7,11 @@ const config: DocsThemeConfig = {
   logo: (<span style={{ fontWeight: 800, fontSize: '20px' }}>
   InsideFoot
 </span>),
-  project: {
-    link: 'https://github.com/shuding/nextra-docs-template',
-  },
+  // project: {
+  //   link: 'https://github.com/shuding/nextra-docs-template',
+  // },
 
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  // docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
   footer: {
     text: 'Inside Foot',
   },

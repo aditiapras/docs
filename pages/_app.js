@@ -6,6 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 function MyApp({ Component, pageProps }) {
   return (
+    // <main className={`fonts`}>
     <main className={inter.className}>
       <Component {...pageProps} />
     </main>

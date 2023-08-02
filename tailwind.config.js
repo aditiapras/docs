@@ -6,11 +6,7 @@ module.exports = {
     "./components/**/*.{js,jsx,ts,tsx,md,mdx}",
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        Inter: ["Inter", "sans-serif"],
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };
