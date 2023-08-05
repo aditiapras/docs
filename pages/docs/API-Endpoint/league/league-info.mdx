@@ -1,19 +1,37 @@
 # League Info
 
-## Base URL
+## Endpoint
 
-This is the base URL for this endpoint `https://football-api67.p.rapidapi.com/leagues` you can use this endpoint to get the league information such as league names, id, and seasons.
+This is the endpoint you will be using to get information such as league name, id, and list of seasons available.
+
+```{1} filename="Endpoint" copy
+https://football-api67.p.rapidapi.com/leagues
+```
+
+## How to use this API
 
 ### Request Headers
 
-Dont forget to set the request headers according to the listed headers, unless you will get an error response from the API.
+Set the request headers according to the listed headers, unless you will get an error response from the API.
 
-`'X-RapidAPI-Key': YOUR_API_KEY` and `'X-RapidAPI-Host': 'football-api67.p.rapidapi.com'`
+```js filename="Request Headers" copy
+{
+  method: "GET"
+  headers: {
+    'X-RapidAPI-Key'  : YOUR_API_KEY,
+    'X-RapidAPI-Host' : 'football-api67.p.rapidapi.com',
+  }
+}
+```
 
 ### Query Parameters
 
 This endpoint also requires a parameter. `League ID` is required to get the league information from the API.
-The final api endpoint would be like this `https://football-api67.p.rapidapi.com/leagues/?id=LeagueID`. You can see the example requests below.
+The final api endpoint would be like this as you can see the example requests below.
+
+```{1} filename="Parameters" /LeagueID/ copy
+https://football-api67.p.rapidapi.com/leagues?id=LeagueID
+```
 
 ### Example Request
 
@@ -44,7 +62,7 @@ try {
 
 Once you fetch the data from the API, you will get response from the API as shown in the example below.
 
-```json
+```json filename="Example Response"
 {
   "details": {
     "id": 42,
