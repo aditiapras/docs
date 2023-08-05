@@ -8,3 +8,12 @@
     /* font-family: -apple-system, 'Inter', sans-serif; */
     font-family: -apple-system, 'Inter', sans-serif;
 }
+
+:root{
+    --shiki-token-link: #22863a;
+}
+
+.dark{
+    --shiki-token-link: #ffab70;
+
+}
