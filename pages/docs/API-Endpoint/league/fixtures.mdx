@@ -2,22 +2,92 @@ import Fixtures from "/components/fixture";
 
 # Fixtures
 
+Here is an example of the API response, this data is available in real-time, once the match is finished it will gather new fixtures for the next match.
+
 ## Upcoming Events
 
 <Fixtures />
 
-## Base URL
+## Endpoint
 
-This is an example of component using data from the API. This data is available in real-time, once the match is finished it will gather new fixtures for the next match. From this endpoint you will get information about the new fixtures in the league.
+This endpoint you will give information about the new fixtures in the league.
 
-Base URL: `https://football-api67.p.rapidapi.com/leagues/fixtures`
+```{1} filename="Endpoint" copy /leagues/ /fixtures?id=42/
+https://football-api67.p.rapidapi.com/leagues/fixtures?id=42
+```
+
+## How to use this API
 
 ### Request Headers
 
-Dont forget to set the request headers according to the listed headers, unless you will get an error response from the API.
+Set the request headers according to the listed headers, unless you will get an error response from the API.
 
-`'X-RapidAPI-Key': YOUR_API_KEY` and `'X-RapidAPI-Host': 'football-api67.p.rapidapi.com'`
+```js filename="Request Headers" copy
+{
+  method: "GET"
+  headers: {
+    'X-RapidAPI-Key'  : YOUR_API_KEY,
+    'X-RapidAPI-Host' : 'football-api67.p.rapidapi.com',
+  }
+}
+```
 
 ### Query Parameters
 
-This endpoint require 2 (two) query parameters.
+This endpoint is requires `League ID` as paramaters to get data about league fixtures from the API endpoint.
+
+```{1} filename="Parameters" copy /id=42/
+https://football-api67.p.rapidapi.com/leagues/fixtures?id=42
+```
+
+### Example Request
+
+This is the example request using [`Node.js`](https://nodejs.org/) fetch.
+
+```js filename="example.js" copy
+const fetch = require("node-fetch");
+
+const url = "https://football-api67.p.rapidapi.com/allLeagues";
+const options = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": YOUR_API_KEY,
+    "X-RapidAPI-Host": "football-api67.p.rapidapi.com",
+  },
+};
+
+try {
+  const response = await fetch(url, options);
+  const result = await response.text();
+  console.log(result);
+} catch (error) {
+  console.error(error);
+}
+```
+
+### Example Response
+
+Once you fetch the data from the API, you will get response from the API as shown in the example below.
+
+```json filename="Example Response"
+{
+    "popular": [
+        {
+            id:47
+            name:"Premier League"
+            localizedName:"Premier League"
+            logo:
+            light:"..."
+            dark:"..."
+        },
+        {
+            id:42
+            name:"Champions League"
+            localizedName:"Champions League"
+            logo:
+            light:"..."
+            dark:"..."
+        }
+    ]
+}
+```
