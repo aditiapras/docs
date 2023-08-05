@@ -4,7 +4,7 @@ We use API keys to allow user to access our API. You can register a new API key 
 
 We planned to create our users dashboard if you want to access this API directly from our server. It also require an API key to access this API.
 
-## Rapid API
+## How to use this API
 
 Since this API is store in RapidAPI, you are required to use `base url` from [`RapidAPI`](https://rapidapi.com). We also set the rate limit to maintain our server load. However, you can increase the rate limit by subscribing to this API from RapidAPI.
 
@@ -12,15 +12,17 @@ Since this API is store in RapidAPI, you are required to use `base url` from [`R
 
 This is the base URL you are using to access this API
 
-`https://football-api67.p.rapidapi.com/{ENDPOINT}`
+```js filename="Base Url"
+https://football-api67.p.rapidapi.com/{ENDPOINT}
+```
 
 ### Request Headers
 
 The API is configured to work only with GET requests and allows only the headers listed below:
 
-```
-    'X-RapidAPI-Key': API_KEYS,
-    'X-RapidAPI-Host': 'football-api67.p.rapidapi.com'
+```js filename="Request Headers"
+'X-RapidAPI-Key'    : YOUR_API_KEYS,
+'X-RapidAPI-Host'   : 'football-api67.p.rapidapi.com'
 ```
 
 If you make non-GET requests or add headers that are not in the list, you will receive an error from the API.
