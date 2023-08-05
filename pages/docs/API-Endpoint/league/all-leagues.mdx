@@ -1,18 +1,36 @@
 # All Leagues
 
-## Base URL
+## Endpoint
 
-This is the base URL for this endpoint `https://football-api67.p.rapidapi.com/allLeagues` you can use this endpoint to get the league information such as league names, id, and seasons.
+This is the endpoint you will be using to get information of all leagues listed.
+
+```{1} filename="Endpoint" copy
+https://football-api67.p.rapidapi.com/allLeagues
+```
+
+## How to use this API
 
 ### Request Headers
 
-Dont forget to set the request headers according to the listed headers, unless you will get an error response from the API.
+Set the request headers according to the listed headers, unless you will get an error response from the API.
 
-`'X-RapidAPI-Key': YOUR_API_KEY` and `'X-RapidAPI-Host': 'football-api67.p.rapidapi.com'`
+```js filename="Request Headers" copy
+{
+  method: "GET"
+  headers: {
+    'X-RapidAPI-Key'  : YOUR_API_KEY,
+    'X-RapidAPI-Host' : 'football-api67.p.rapidapi.com',
+  }
+}
+```
 
 ### Query Parameters
 
-This endpoint is **not require** any parameter, just go with this endpoint `https://football-api67.p.rapidapi.com/allLeagues` and you will get response from the API.
+This endpoint is **not require** any parameter, just go with this endpoint and you will get response from the API.
+
+```{1} filename="Parameters" copy
+https://football-api67.p.rapidapi.com/allLeagues
+```
 
 ### Example Request
 
@@ -43,13 +61,21 @@ try {
 
 Once you fetch the data from the API, you will get response from the API as shown in the example below.
 
-```json
+```json filename="Example Response"
 {
     "popular": [
         {
             id:47
             name:"Premier League"
             localizedName:"Premier League"
+            logo:
+            light:"..."
+            dark:"..."
+        },
+        {
+            id:42
+            name:"Champions League"
+            localizedName:"Champions League"
             logo:
             light:"..."
             dark:"..."
